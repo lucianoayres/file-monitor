@@ -2,14 +2,15 @@ import os
 import time
 import logging
 
+# Default log filename
+LOG_FILENAME = "./file_monitor.log"
+
 # Script information
 APP_NAME = "FileMonitor"
 APP_VERSION = "0.1"
 APP_LAUNCH_MESSAGE = f"[ {APP_NAME} ] v{APP_VERSION}"
+APP_LOG_INFO = f"Changes will be logged in {LOG_FILENAME}"
 APP_INFO_DIVIDER = "·" * 80
-
-# Default log filename
-LOG_FILENAME = "./file_monitor.log"
 
 # Log messages
 LOG_FILE_UPDATED = "File {} was updated!"
@@ -113,7 +114,7 @@ def main():
     file_monitor.initialize_timestamps()
     
     print(APP_INFO_DIVIDER)
-    print(f"Changes will be logged in {LOG_FILENAME}")
+    print(APP_LOG_INFO)
     print("")
     file_monitor.monitor_changes()
     
